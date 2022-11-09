@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: blue;
+        }
+        .number{
+            color: grey;
+        }
+    </style>
+    <script>    
+        var DITCS = "인공지능컴퓨터정보과";
+      /* 객체를 매개변수로 넘겨받아, 해당 객체의 속성과 속성값을 차례대로 출력 */
+        function showPropertyList(obj){
+            let i = 1
+            for(let key in obj){
+                document.write(`<span class="number">${i++}</span>. [<b>${key}</b>] : <span>${obj[key]}</span><br>`);
+            }
+        }
+        </script>
+</head>
+<body>
+    
+
+    <script>
+        // showPropertyList(window);
+        // showPropertyList(location);
+        // showPropertyList(navigator);
+        showPropertyList(screen);
+    </script>
+</body>
+</html>
+
+<!--
+    document ( DOM )
+        - web brower의 핵심
+        - <body> 태그에서 출력하기 -> document.write(.....)
+            # HTML 코드로 인식됨. 
+            # 문서객체모델
+            # 웹브라우저가 HTML 문서를 인식하고 관리하는 방법
+            # 객체 document와 관련된 객체들의 집합  ************* 기말 출제 **************
+                - HTML Tag -> 요쇼 노드
+                - Tag에 포함되는 내용(text) -> 텍스트 노드
+            
+            # 추가와 삭제 가능
+                - 요소 노드 생성            -> document.createElement(tagName)
+                - 텍스트 노드 생성           -> document.createTextNode(text)
+                - 부모노드에 자식 노드 연결하기 -> parenNode.appendChild(childName)
+
+    
+-->

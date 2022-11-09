@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NODE</title>
+</head>
+<body>
+    
+
+</body>
+<script>
+    let myP = document.createElement("p")   // p tag 노드 생성("문자열안에 태그 작성")
+    let pText = document.createTextNode("javaScript와 DOM 연습중")
+    myP.appendChild(pText);   // 요소 노드와 텍스트 노드를 연결
+    document.body.appendChild(myP); // 요소 노드를 body Tag에 연결
+
+    document.body.appendChild(document.createElement("hr"))
+
+    let myD = document.createElement("div");
+    myD.appendChild(document.createTextNode("javaScript"));
+    document.body.appendChild(myD);
+</script>
+</html>
