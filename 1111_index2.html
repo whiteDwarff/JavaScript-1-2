@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        alert("process-0")
+    </script> -->
+    <script>
+        // document.querySelector("h1").style.color = "blue";
+        /* 
+        1. document 객체의 h1 태그를 가지고  와 ~
+        2. css style 중 color 속성값을 블루로 할게 ~
+
+        3. 위의 코드는 <body>의 <h1>을 만나기 전으로, 실행되지 않는 코드이다.
+        */
+       window.onload = function(){
+
+            let d = document.querySelector("div");
+            document.querySelector("h1").innerHTML = "자바스크립트";
+            // document.querySelector("div").style.border = "2px solid grey";
+            // document.querySelector("div").style.padding = "10px";
+            // document.querySelector("div").innerHTML = "동의과학대학교 인공지능컴퓨터정보과";
+            d.innerHTML += "<h1>동의과학대학교</h1><hr><h2>강문호</h2>";
+            // += 기존에 있던 내용에 사용자가 설정한 코드를 더한다
+            d.style.padding = "10px";
+            d.style.border = "thin solid grey";
+            d.style.borderRadius = "10px";
+            document.querySelector("h2").style.color = "green";
+            document.querySelector("h2").style.backgroundColor = "yellow";
+       }
+       // onload = html 문서가 화면에 전부 보여진 뒤 실행해줘 ~ (callBack)
+    </script>
+</head>
+<body>
+    <h1>javaScript</h1>   
+    <div>
+        <h1>DIT</h1>
+    </div>
+</body>
+</html>
+<!--
+    문서 객체 선택1
+        # 다양한 방법으로 선택 가능하다.
+            - id        = document.getElementById("id");           -> 1
+            - tagName   = document.getElementsByTagName("h1")      -> all
+            - className = document.getElementsByClassName("class") -> all
+            - cssSelector = document.querySelecor("selector")      -> 1
+                            document.querySelecorAll("selector")   -> all
+
+    문서 객체 선택
+        # HTML 내용
+            - innerHTML = 요쇼의 내부 HTML을 변경
+                          기존의 내용을 지우고 새롭게 다시 작성됨 
+        
+    이벤트
+        # 이벤트가 발생하면 원하는 코드를 실행되도록 할 수 있음
+        # 이벤트란?
+            - 웹브라우저에서 사용자가 하는 모든 행위
+
+        # 마우스 클릭
+            - onmousedown
+            - onmousedoup
+            - onclick
+
+
+
+-->

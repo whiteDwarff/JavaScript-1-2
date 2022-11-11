@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        alert("process-0")
+    </script> -->
+    <script>
+        // document.querySelector("h1").style.color = "blue";
+        /* 
+        1. document 객체의 h1 태그를 가지고  와 ~
+        2. css style 중 color 속성값을 블루로 할게 ~
+
+        3. 위의 코드는 <body>의 <h1>을 만나기 전으로, 실행되지 않는 코드이다.
+        */
+       window.onload = function(){
+            document.querySelector("h1").style.color = "red";
+       }
+       // onload = html 문서가 화면에 전부 보여진 뒤 실행해줘 ~ (callBack)
+    </script>
+</head>
+<body>
+    <h1>javaScript</h1>
+
+   
+</body>
+</html>
+<!--
+    문서 객체 선택
+        # 다양한 방법으로 선택 가능하다.
+            - id        = document.getElementById("id");           -> 1
+            - tagName   = document.getElementsByTagName("h1")      -> all
+            - className = document.getElementsByClassName("class") -> all
+            - cssSelector = document.querySelecor("selector")      -> 1
+                            document.querySelecorAll("selector")   -> all
+
+
+    문서 객체 선택
+        # HTML 내용
+            - inner
+-->
