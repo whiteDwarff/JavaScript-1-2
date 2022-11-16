@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표준 이벤트 모델</title>
+    <script>
+        function textblue(){
+            this.style.color = 'blue';
+        }
+        function textblack(){
+            this.style.color = 'black';
+        }
+        function borderOn() {
+            this.style.border = "1px solid black";
+            this.style.padding = "10px";
+            this.style.backgroundColor = "lightgrey";
+        }
+        function borderOff() {
+            this.style.border = "none";
+            this.style.padding = "1px";
+            this.style.backgroundColor = "white";
+        }
+        window.onload = function(){
+            let h1 = document.querySelector("h1");
+            let h2Array = document.getElementsByTagName("h2");  // 배열로 들고옴
+            const button = document.querySelector("#bdrOff");
+            const button2 = document.querySelector("#bdrOn");
+            
+            h1.addEventListener("mouseover", textblue);
+            h1.addEventListener("mouseout", textblack);
+            h1.addEventListener("mouseover", borderOn);
+            h1.addEventListener("mouseout", borderOff);
+            
+            for (let h2 of h2Array) {
+                h2.addEventListener("mouseover", textblue);
+                h2.addEventListener("mouseout", textblack);
+                h2.addEventListener("mouseover", borderOn);
+                h2.addEventListener("mouseout", borderOff);
+            }
+            
+            
+            button.innerText = "테두리기능 삭제하기";
+            button2.innerText = "테두리기능 추가하기";
+            button.onclick = function() {
+                let h1 = document.querySelector("h1");
+                h1.removeEventListener("mouseover", borderOn);
+                h1.removeEventListener("mouseout", borderOff);
+                button.style.display="none";
+                button2.style.display="block";
+            }
+            button2.onclick = function() {
+                let h1 = document.querySelector("h1");
+                h1.addEventListener("mouseover", borderOn);
+                h1.addEventListener("mouseout", borderOff);
+                button.style.display="block";
+                button2.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>표준이벤트모델</h1>
+    <hr>
+    <button id ="bdrOff"></button>
+    <button id="bdrOn"></button>
+    <h2>프론트앤드프로그래밍</h2>
+    <h2>자바프로그래밍</h2>
+    <h2>데이터베이스</h2>
+    <h2>오픈소스소프트웨어</h2>
+    <h2>이산수학</h2>
+</body>
+</html>
+
+
+
+
+
+<!--
+    고전 이벤트 모델
+        # HTML과 독립적인 script 영역에서 태그의 이벤트 속성에 이벤트 삽입
+-->
