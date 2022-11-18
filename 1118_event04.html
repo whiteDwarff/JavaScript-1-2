@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            text-align: center;
+        }
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin-right: 30px;
+        }
+        .icon:last-child {
+            margin-right: 0;
+        }
+        #fileName{
+            display: block;
+        }
+
+    </style>
+    <title>Document</title>
+    <script>
+        let defaultImage = "./IMG/export.png";
+        //--------------------------------------------
+        function getLastToken(str, cutter = "/"){
+            let tokens = str.split(cutter);
+            // decodeURI : decoing해서 넘겨줌
+            return decodeURI(tokens.pop());
+        }
+        // 더블클릭하면 defaultImage를 변경하는 함수
+        function clickedImage(){
+            defaultImage = this.src;
+        }
+        // targetImage의 속성 src 값을 자신의 src 값으로 덮어쓴다.
+        function changeTargetImage(){
+            let ti = document.getElementById("targetImage");
+            document.getElementById("fileName").innerText = getLastToken(this.src);
+            ti.setAttribute("src", this.src);
+        }
+        // targetImage의 속성값을 기본이미지로 재설정하는 이벤트 핸들러
+        function recoverTargetImage(){
+            let ti = document.getElementById("targetImage");
+            ti.setAttribute("src", defaultImage);
+        }
+        //--------------------------------------------
+        window.onload = function(){
+            //1. icon img의 mouseover 이벤트 핸들러를 차례로 각각 등록한다.
+            let icons = document.getElementsByClassName("icon");
+            for(let item of icons){
+                item.addEventListener("mouseover", changeTargetImage);
+                item.addEventListener("mouseout", recoverTargetImage);
+                item.addEventListener("dblclick", clickedImage);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Image Browser</h1><hr>
+    <div>
+        <img id="targetImage" src="./IMG/export.png" alt="">
+        <span id="fileName"></span>
+    </div>
+    <hr>
+    <div>
+    <img class="icon" src="./IMG/export.png" alt="">
+    <img class="icon" src="IMG/export2.png" alt="">
+    <img class="icon" src="IMG/file.png" alt="">
+    <img class="icon" src="IMG/my.png" alt="">
+    <img class="icon" src="IMG/search.png" alt="">
+</div>
+</html>
