@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JQuery Test</title>
+        <script src="jquery-3.6.1.min.js"></script>
+        <script src="query.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            $(document).ready(function(){
+                $("#btnOFF").click(function(){
+                    // (transition, callback)
+                    $("li").slideUp(); 
+                    // $("li").fadeOut(); 
+                    // $("li").hide(500); 
+                });
+                //----------------------------------
+                $("#btnON").click(function(){
+                    $("li").slideDown(); 
+                    // $("li").fadeIn();
+                    // $("li").show(500);
+                });
+                //----------------------------------
+                $("#btnToggle").click(function(){
+                    $("li").slideToggle(); 
+                    // $("li").fadeToggle(300);
+                    // $("li").Toggle(500);
+                })
+                $("#moveRight").click(function(){
+                    // 객체를 생성
+                    $("div").animate({
+                        left: "+=50px", // 현재 위치에서 누를때마다 50px씩 더해라
+                        top : "+=50px"
+                        // left: "250px",   현재위치에서 한번만 이동한다.
+                    } )
+                })
+                $("#moveLeft").click(function(){
+                    $("div").animate({
+                        left: "-=50px",
+                        top : "-=50px"
+                    } )
+                })
+        });
+//=====================================
+        </script>
+    </head>
+<body>
+    <h1>jQuery Test</h1>
+    <hr>
+    <button id="moveRight">Move Right</button>
+    <button id="moveLeft">Move Left</button>
+    <button id="btnOFF">수강과목 모두 가리기</button>
+    <button id="btnON">수강과목 모두 보이기</button>
+    <button id="btnToggle">수강과목 모두 Toggle</button>
+    <h2>1학년 2학기 수강과목</h2>
+    <ul>
+        <li>프론트엔드프로그래밍2</li>
+        <li>자바프로그래밍</li>
+        <li>데이터베이스</li>
+        <li>이산수학</li>
+        <li>오픈소스소프트웨어</li>
+    </ul>
+    <div>JavaScript</div>
+</body>
+</html>
+<!--
+    .hide()     ->  숨기기
+    .show()     ->  보이기
+    .toggle()   ->  반대로 움직이기
+
+    .fadeOut()  ->  조명이 꺼지듯이 서서히 숨김
+    .fadeIn()  ->  조명이 꺼지듯이 서서히 나타남
+
+    .slideUp()  -> 숨기기       // hide(), show()와 같다
+    .slideDown()-> 보이기
+    .slideToggle()-> 토글
+
+
+-->

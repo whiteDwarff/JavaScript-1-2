@@ -1,0 +1,7 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: cyan;
+    /* moveBox를 움직이게 하기 위해서 position 속성을 넣는다 */
+    position: absolute;
+}
