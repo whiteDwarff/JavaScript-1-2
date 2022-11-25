@@ -1,0 +1,9 @@
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: this solid grey;
+}
+th {
+    background-color: lightgrey;
+}
