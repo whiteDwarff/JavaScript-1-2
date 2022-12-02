@@ -11,6 +11,9 @@
     margin-right: 50px;
     width: 10vh;
 }
+.box:last-child {
+    margin-right: 0;
+}
 .card{
     border: 2px solid #02343F;
     background-color: #F0EDCC;
@@ -18,8 +21,13 @@
     padding: 30px;
     margin-bottom: 30px;
 }
-.card:active {
-    background-color: #02343F;
-    color: red;
-    font-weight: bold;
+/* ----------------------------------------------------------------- */
+.draggingCard {
+    border-color: red;
+}
+.overBox {
+    background-color: cyan;
+}
+.overCard {
+    background-color: orange;
 }
