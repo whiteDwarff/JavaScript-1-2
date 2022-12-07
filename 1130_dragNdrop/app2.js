@@ -1,6 +1,12 @@
 // 전역변수 
 let dragingCard = null;  // draging 시작한 객체
 let dragOverCard = null; // draging 카드가 방문중인  객체(카드)
+
+////////////////////////////////////////////////////////////////
+let strProblem =  "So programming is the way I think we sholid be doing that"
+;
+////////////////////////////////////////////////////////////////
+
 //-------------------------------------------------------------
 // card Event Handlers 
 
@@ -61,6 +67,11 @@ function onDropBox(ev) {
 }
 //---------------------------------------------------------boxEvent
 window.onload = function() {
+    // initCard();
+    initCardFromString(strProblem);
+
+
+
     // card 객체에 이벤트 핸들러를 연결
     let cards = document.querySelectorAll(".card");
     for(let card of cards) {
@@ -79,3 +90,37 @@ window.onload = function() {
 
 }
 //-------------------------------------------------------------
+
+function initCard() {
+    let boxNumber = 1;
+    let boxArray = document.querySelectorAll(".box");
+
+    for(let box of boxArray) {
+        // 카드 한장을 생성하는 HTML문장을 완성
+        let cardHTML = "";
+        for(let cardNumber = 1; cardNumber<=3; cardNumber++) {
+            cardHTML += `<div draggable="true" class="card">Card${boxNumber}${cardNumber}</div>`
+        }
+        // 완성된 카드 한 장의 HTML 문장을 박스에 추가한다.
+        box.innerHTML = cardHTML;
+        boxNumber++;
+    }
+}
+
+//-------------------------------------------------------------
+
+function initCardFromString(str) {
+    let wordArray = str.split(" ");
+    let box = document.querySelector(".box");
+
+    // 박스에 단어 카드들을 생성하야 추가한다.
+        // 카드 한장을 생성하는 HTML문장을 완성
+        let cardHTML = "";
+        for(let word of wordArray) {
+            cardHTML += `<div draggable="true" class="card">${word}</div>`
+            // shuffle(cardHTML);
+        }
+        // 완성된 카드 한 장의 HTML 문장을 박스에 추가한다.
+        box.innerHTML = cardHTML;
+    
+}
