@@ -14,6 +14,4 @@ let problems = {
             eng: "So programming is the way I think we sholid be doing that"
         }
     ]
-
-
 }

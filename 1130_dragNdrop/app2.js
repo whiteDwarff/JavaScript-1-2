@@ -116,9 +116,9 @@ function initCardFromString(str) {
     // 박스에 단어 카드들을 생성하야 추가한다.
         // 카드 한장을 생성하는 HTML문장을 완성
         let cardHTML = "";
+        let count = 1;
         for(let word of wordArray) {
-            cardHTML += `<div draggable="true" class="card">${word}</div>`
-            // shuffle(cardHTML);
+            cardHTML += `<div oo="${count++}" draggable="true" class="card">${word}</div>`
         }
         // 완성된 카드 한 장의 HTML 문장을 박스에 추가한다.
         box.innerHTML = cardHTML;
